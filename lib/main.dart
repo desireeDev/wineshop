@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wineshop/screens/intro_screen.dart';
+import 'package:wineshop/screens/present_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +16,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const IntroScreen(),
+      //home: const IntroScreen(),
+      home: const PresentScreen(),
       debugShowCheckedModeBanner: false,
     );
   }

@@ -1,0 +1,21 @@
+J'ai répertorié 11 vues:
+
+* Introduction screen
+*Home screen: avec floating navigation bar avec pour éléments:
+	#Dash screen : bare "search" et un "tabs" avec les catégories de vins
+		-> Details screen : affichant le détail d'un article, et option
+				    d'incrémenter ou décrémenter le nombre.
+				 	Bouton d'ajout de l'article au panier
+		-> Cart screen : affichant tous les articles ajoutés au panier et leur total. 
+				Bouton pour le choix du moyen de paiement
+		-> Checkout screen: Bouton pour procéder au paiement et contient "tabs" :
+			°Delivery: le délai de livraison, la position géographique, prix total
+			°Pickup: 
+		-> Payment screen: détails de carte bancaire et bouton pour valider la commande en totalité
+		-> Success screen: pour spécifier que la commande a été prise en compte, et bouton pour retourner à la home page
+
+	#Fav screen : 
+	#Card screen : 
+	#Setting screen :
+
+Mais seules 8 vues sont détaillées
