@@ -19,3 +19,12 @@ J'ai répertorié 11 vues:
 	#Setting screen :
 
 Mais seules 8 vues sont détaillées
+
+
+Idées de police:
+- Roxborough
+- PT Serif
+- Lora
+- Merriweather
+- Playfair Display
+- Gabriela

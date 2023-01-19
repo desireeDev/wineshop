@@ -1,5 +1,6 @@
 //affichage des éléments
 import 'package:flutter/cupertino.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class OnboardContent extends StatelessWidget {
   const OnboardContent({Key? key, required this.image, required this.title, required this.description}) : super(key: key);
@@ -22,12 +23,12 @@ class OnboardContent extends StatelessWidget {
             children: [
               Text(
                 title,
-                style: TextStyle(fontSize: 16, color: Color(0xff828488), fontWeight: FontWeight.w500),
+                style: GoogleFonts.gabriela(textStyle: TextStyle(fontSize: 16, color: Color(0xff828488), fontWeight: FontWeight.w500)),
               ),
               SizedBox(height: 20,),
               Text(
                 description,
-                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                style: GoogleFonts.gabriela(textStyle: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
               ),
             ],
           ),

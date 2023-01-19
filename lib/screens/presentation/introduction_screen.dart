@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../home_screen.dart';
 import 'linear_indicator.dart';
@@ -22,12 +23,12 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
     Onboard(
         title: "Welcome to the World of Wine",
         description: "Here you pick up a drink that fits all your criteria",
-        image: "assets/ebook.png"
+        image: "assets/g2.png"
     ),
     Onboard(
         title: "Huge selection of wines for you",
         description: "Select wines from different types, ages, countries",
-        image: "assets/learn.png"
+        image: "assets/g1.png"
     ),
     Onboard(
         title: "Install the wine filter quickly",
@@ -71,11 +72,12 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
                       onPressed: (){
                         goToHome(context);
                       },
-                      child: const Text(
+                      child: Text(
                           "Skip",
-                        style: TextStyle(
-                          color: Color(0xff828488),
-                          fontWeight: FontWeight.w500
+                        style: GoogleFonts.gabriela(textStyle: const TextStyle(
+                            color: Color(0xff828488),
+                            fontWeight: FontWeight.w500
+                          )
                         ),
                       )
                   )
@@ -125,11 +127,9 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
                           borderRadius: BorderRadius.circular(16), // <-- Radius
                         )
                       ),
-                      child: const Text(
+                      child: Text(
                         "Next",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold
-                        ),
+                        style: GoogleFonts.gabriela(textStyle: const TextStyle(fontWeight: FontWeight.bold)),
                       ),
                     ),
                   ),
