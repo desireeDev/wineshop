@@ -230,7 +230,7 @@ class _IntroScreenState extends State<IntroScreen> {
       child: InkWell(
         borderRadius: defaultProceedButtonBorderRadius,
         onTap: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => const HomeScreen()));
+          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomeScreen()));
         },
         child: const Padding(
           padding: defaultProceedButtonPadding,

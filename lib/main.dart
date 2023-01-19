@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wineshop/screens/intro_screen.dart';
 import 'package:wineshop/screens/present_screen.dart';
+import 'package:wineshop/screens/presentation/introduction_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,10 +15,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: const Color(0xFF421926),
+        // backgroundColor: const Color(0xffF2F5FA),
+        // scaffoldBackgroundColor:  const Color(0xffF2F5FA),
+        colorScheme:  const ColorScheme.light(
+          primary: Color(0xFF421926),
+        ),
       ),
       //home: const IntroScreen(),
-      home: const PresentScreen(),
+      //home: const PresentScreen(),
+      home: const IntroductionScreen(),
       debugShowCheckedModeBanner: false,
     );
   }

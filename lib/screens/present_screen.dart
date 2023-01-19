@@ -16,8 +16,8 @@ class _PresentScreenState extends State<PresentScreen> {
         child: IntroductionScreen(
           pages: [
             PageViewModel(
-              title: 'A reader lives a thousand lives',
-              body: 'The man who never reads lives only one.',
+              title: 'Welcome to the World of Wine',
+              body: 'Here you pick up a drink that fits all your criteria',
               image: buildImage('assets/ebook.png'),
               decoration: getPageDecoration(),
             ),
@@ -36,23 +36,44 @@ class _PresentScreenState extends State<PresentScreen> {
             PageViewModel(
               title: 'Today a reader, tomorrow a leader',
               body: 'Start your journey',
-              footer: IconButton(
-                onPressed: () { goToHome(context); },
-                icon: const Text('Start Reading'),
+              footer: ElevatedButton(
+                onPressed: (){
+                  goToHome(context);
+                },
+                child: const Text(
+                  'Start Reading',
+                  style: TextStyle(color: Colors.white, fontSize: 16),
+                ),
               ),
               image: buildImage('assets/learn.png'),
               decoration: getPageDecoration(),
             ),
           ],
-          done: Text('Read', style: const TextStyle(fontWeight: FontWeight.w600)),
+          done: ElevatedButton(
+            onPressed: (){
+              goToHome(context);
+            },
+            child: const Text(
+              'Start Reading',
+              style: TextStyle(color: Colors.white, fontSize: 16),
+            ),
+          ),
           onDone: () => goToHome(context),
           showSkipButton: true,
           skip: Text('Skip'),
           onSkip: () => goToHome(context),
-          next: Icon(Icons.arrow_forward),
+          next: ElevatedButton(
+            onPressed: (){
+              //goToHome(context);
+            },
+            child: const Text(
+              'Start Reading',
+              style: TextStyle(color: Colors.white, fontSize: 16),
+            ),
+          ),
           dotsDecorator: getDotDecoration(),
           onChange: (index) => print('Page $index selected'),
-          globalBackgroundColor: Theme.of(context).primaryColor,
+          globalBackgroundColor: Color(0xFFFFFFFF),
           dotsFlex: 0,
           nextFlex: 0,
           // isProgressTap: false,
@@ -63,12 +84,10 @@ class _PresentScreenState extends State<PresentScreen> {
         ),
       );
 
-  void goToHome(context) => Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (_) => const HomeScreen()),
-      );
+  void goToHome(context) => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomeScreen()));
 
   Widget buildImage(String path) =>
-      Center(child: Image.asset(path, width: 350));
+      Center(child: Image.asset(path, width: 300));
 
   DotsDecorator getDotDecoration() => DotsDecorator(
         color: Color(0xFFBDBDBD),
@@ -80,10 +99,9 @@ class _PresentScreenState extends State<PresentScreen> {
         ),
       );
 
-  PageDecoration getPageDecoration() => PageDecoration(
-        titleTextStyle: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
-        bodyTextStyle: TextStyle(fontSize: 20),
-        bodyPadding: EdgeInsets.all(16).copyWith(bottom: 0),
+  PageDecoration getPageDecoration() => const PageDecoration(
+        titleTextStyle: TextStyle(fontSize: 16, color: Color(0xff828488), fontWeight: FontWeight.w500),
+        bodyTextStyle: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
         imagePadding: EdgeInsets.all(24),
         pageColor: Colors.white,
       );
