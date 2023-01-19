@@ -23,17 +23,17 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
     Onboard(
         title: "Welcome to the World of Wine",
         description: "Here you pick up a drink that fits all your criteria",
-        image: "assets/g2.png"
+        image: "assets/g3.png"
     ),
     Onboard(
         title: "Huge selection of wines for you",
         description: "Select wines from different types, ages, countries",
-        image: "assets/g1.png"
+        image: "assets/g2.png"
     ),
     Onboard(
         title: "Install the wine filter quickly",
         description: "You can choose your favorite type of wine",
-        image: "assets/readingbook.png"
+        image: "assets/g1.png"
     ),
   ];
   int number = 0;
