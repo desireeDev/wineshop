@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:wineshop/screens/intro_screen.dart';
-import 'package:wineshop/screens/present_screen.dart';
 import 'package:wineshop/screens/presentation/introduction_screen.dart';
 
 void main() {

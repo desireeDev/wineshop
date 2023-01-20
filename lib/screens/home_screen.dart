@@ -22,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             IconButton(
                 onPressed: (){
-                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const CheckOutScreen()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const CheckOutScreen()));
                 },
                 icon: const Icon(Icons.arrow_forward)
             )
