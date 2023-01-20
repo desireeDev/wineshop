@@ -3,14 +3,14 @@ import 'package:google_fonts/google_fonts.dart';
 
 
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class DetailsScreen extends StatefulWidget {
+  const DetailsScreen({Key? key}) : super(key: key);
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<DetailsScreen> createState() => _DetailsScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _DetailsScreenState extends State<DetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
