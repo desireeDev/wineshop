@@ -1,5 +1,6 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:wineshop/screens/checkout_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -11,10 +12,22 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        "Bienvenue",
-        style: GoogleFonts.gabriela(),
+    return Scaffold(
+      body: Center(
+        child: Column(
+          children: [
+            Text(
+              "Bienvenue",
+              style: GoogleFonts.gabriela(),
+            ),
+            IconButton(
+                onPressed: (){
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const CheckOutScreen()));
+                },
+                icon: const Icon(Icons.arrow_forward)
+            )
+          ],
+        ),
       ),
     );
   }

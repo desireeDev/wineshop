@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -75,7 +74,7 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
                       child: Text(
                           "Skip",
                         style: GoogleFonts.gabriela(textStyle: const TextStyle(
-                            color: Color(0xff828488),
+                            color: Color(0xffd1d3d5),
                             fontWeight: FontWeight.w500
                           )
                         ),
