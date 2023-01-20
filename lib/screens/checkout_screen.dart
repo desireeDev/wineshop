@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:wineshop/screens/payment_screen.dart';
 
 class CheckOutScreen extends StatefulWidget {
   const CheckOutScreen({Key? key}) : super(key: key);
@@ -11,6 +12,8 @@ class CheckOutScreen extends StatefulWidget {
 
 class _CheckOutScreenState extends State<CheckOutScreen> with TickerProviderStateMixin{
   late TabController _controller;
+  TextEditingController lieuController = TextEditingController();
+  final _formkey = GlobalKey<FormState>();
 
   @override
   void initState() {
@@ -43,7 +46,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> with TickerProviderStat
             onPressed: (){
               Navigator.pop(context);
             },
-            icon: const Icon(Icons.arrow_back_sharp,color: Color(0xff000000),)),
+            icon: const Icon(FontAwesomeIcons.arrowLeft,color: Color(0xff000000),)),
       ),
       body: ListView(
         padding: const EdgeInsets.only(left: 20, right: 20, top: 30,bottom: 0.0),
@@ -83,13 +86,48 @@ class _CheckOutScreenState extends State<CheckOutScreen> with TickerProviderStat
               ],
             ),
           ),
-          SizedBox(
-            height: 800,
-            child: TabBarView(
-              controller: _controller,
+          Form(
+            key: _formkey,
+            child: Column(
               children: [
-                deliveryOpt(),
-                pickupOpt(),
+                SizedBox(
+                  height: 560,
+                  child: TabBarView(
+                    controller: _controller,
+                    children: [
+                      deliveryOpt(),
+                      pickupOpt(),
+                    ],
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      height: 55,
+                      width: 250,
+                      child: ElevatedButton(
+                        onPressed: (){
+                          if(_formkey.currentState!.validate()){
+                            //print("Next page");
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => const PaymentScreen()));
+                          }else{
+                            print("Information incomplète");
+                          }
+                        },
+                        style: ElevatedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(16), // <-- Radius
+                            )
+                        ),
+                        child: Text(
+                          "Proceed to Payments",
+                          style: GoogleFonts.gabriela(textStyle: const TextStyle(fontWeight: FontWeight.bold)),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
@@ -112,11 +150,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> with TickerProviderStat
                     children: [
                       const Icon(FontAwesomeIcons.clock,
                           color: Color(0xFF421926)),
-                      const Icon(
-                          Icons.access_time,
-                        color: Color(0xFF421926),
-                      ),
-                      const SizedBox(width: 10,),
+                      const SizedBox(width: 15,),
                       Text(
                         "30-40 min",
                         style: GoogleFonts.gabriela(
@@ -132,10 +166,10 @@ class _CheckOutScreenState extends State<CheckOutScreen> with TickerProviderStat
                   Row(
                     children: [
                       const Icon(
-                        Icons.location_on_outlined,
+                        FontAwesomeIcons.locationDot,
                         color: Color(0xFF421926),
                       ),
-                      const SizedBox(width: 10,),
+                      const SizedBox(width: 15,),
                       Text(
                         "2342 W Cullerton St",
                         style: GoogleFonts.gabriela(
@@ -148,7 +182,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> with TickerProviderStat
                           onPressed: (){
                             print("Choisir un emplacement");
                           },
-                          icon: const Icon(Icons.arrow_forward_ios_outlined,color: Color(0xff828488),)
+                          icon: const Icon(FontAwesomeIcons.chevronRight,color: Color(0xff828488),)
                       )
                     ],
                   ),
@@ -162,7 +196,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> with TickerProviderStat
                     ),
                   ),
                   const SizedBox(height: 20,),
-                  const Center(child: Text("Page de livraison")),
+                  lieuTextField(),
                   const SizedBox(height: 20,),
                   Row(
                     children: [
@@ -175,8 +209,8 @@ class _CheckOutScreenState extends State<CheckOutScreen> with TickerProviderStat
                       ),
                       const Spacer(),
                       const Icon(
-                        Icons.attach_money_rounded,
-                        size: 18,
+                        FontAwesomeIcons.dollarSign,
+                        size: 16,
                       ),
                       Text(
                         "494.95",
@@ -188,25 +222,6 @@ class _CheckOutScreenState extends State<CheckOutScreen> with TickerProviderStat
                     ],
                   ),
                   const SizedBox(height: 50,),
-                  SizedBox(
-                    height: 55,
-                    width: 200,
-                    child: ElevatedButton(
-                      onPressed: (){
-                        print("Next page");
-
-                      },
-                      style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16), // <-- Radius
-                          )
-                      ),
-                      child: Text(
-                        "Proceed to Payments",
-                        style: GoogleFonts.gabriela(textStyle: const TextStyle(fontWeight: FontWeight.bold)),
-                      ),
-                    ),
-                  ),
                 ],
               ),
             ),
@@ -219,14 +234,131 @@ class _CheckOutScreenState extends State<CheckOutScreen> with TickerProviderStat
   Widget pickupOpt(){
     return ListView(
       children: [
-        Container(
-          child: Column(
-            children: [
-              Center(child: Text("Page de quitance"))
-            ],
+        Padding(
+          padding: const EdgeInsets.all(25.0),
+          child: Container(
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    const Icon(FontAwesomeIcons.clock,
+                        color: Color(0xFF421926)),
+                    const SizedBox(width: 15,),
+                    Text(
+                      "30-40 min",
+                      style: GoogleFonts.gabriela(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 10,),
+                const Divider(),
+                const SizedBox(height: 10,),
+                Row(
+                  children: [
+                    const Icon(
+                      FontAwesomeIcons.locationDot,
+                      color: Color(0xFF421926),
+                    ),
+                    const SizedBox(width: 15,),
+                    Text(
+                      "2342 W Cullerton St",
+                      style: GoogleFonts.gabriela(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    const Spacer(),
+                    IconButton(
+                        onPressed: (){
+                          print("Choisir un emplacement");
+                        },
+                        icon: const Icon(FontAwesomeIcons.chevronRight,color: Color(0xff828488),)
+                    )
+                  ],
+                ),
+                const SizedBox(height: 10,),
+                Container(
+                  width: 400,
+                  height: 250,
+                  decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(15)),
+                    color: Color(0xFFEBEBEF),
+                  ),
+                ),
+                const SizedBox(height: 20,),
+                lieuTextField(),
+                const SizedBox(height: 20,),
+                Row(
+                  children: [
+                    Text(
+                      "Total Price",
+                      style: GoogleFonts.gabriela(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    const Spacer(),
+                    const Icon(
+                      FontAwesomeIcons.dollarSign,
+                      size: 16,
+                    ),
+                    Text(
+                      "494.95",
+                      style: GoogleFonts.gabriela(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 50,),
+              ],
+            ),
           ),
         )
       ],
+    );
+  }
+
+  //Widget saisie d'adresse
+  Widget lieuTextField(){
+    return TextFormField(
+      style: GoogleFonts.gabriela(
+          fontSize: 14,
+          fontWeight: FontWeight.w600,
+          color: const Color(0xFF989898)
+      ),
+      controller: lieuController,
+      validator: (value) {
+        if (value!.isEmpty) {
+          return 'Indiquez votre lieu d\'habitation';
+        } else {
+          return null;
+        }
+      },
+      keyboardType: TextInputType.name,
+      decoration: InputDecoration(
+        filled: true,
+        fillColor: const Color(0xFFF6F2F2),
+        border: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(15.0)),
+            borderSide: BorderSide.none
+        ),
+        focusedBorder: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(15.0)),
+            borderSide: BorderSide.none
+        ),
+        hintText: "Apartment number, floor, office",
+        hintStyle: GoogleFonts.gabriela(
+          fontSize: 14,
+          fontWeight: FontWeight.w600,
+          color: const Color(0xFF989898)
+        ),
+        errorStyle: GoogleFonts.gabriela(),
+      ),
     );
   }
 }
