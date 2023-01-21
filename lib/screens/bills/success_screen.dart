@@ -10,7 +10,7 @@ class SuccessScreen extends StatefulWidget {
 }
 
 class _SuccessScreenState extends State<SuccessScreen> {
-  String image = "assets/g2.png";
+  String image = "assets/o5.png";
   String title = "Done!";
   String description1 = "Your order is being processed.";
   String description2 = "Wait for a call from our manager.";
