@@ -20,8 +20,6 @@ class MyApp extends StatelessWidget {
           primary: Color(0xFF421926),
         ),
       ),
-      //home: const IntroScreen(),
-      //home: const PresentScreen(),
       home: const IntroductionScreen(),
       debugShowCheckedModeBanner: false,
     );
