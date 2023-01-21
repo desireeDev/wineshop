@@ -192,7 +192,11 @@ class _CheckOutScreenState extends State<CheckOutScreen> with TickerProviderStat
                     height: 250,
                     decoration: const BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(15)),
-                      color: Color(0xFFEBEBEF),
+                      //color: Color(0xFFEBEBEF),
+                    ),
+                    child: ClipRRect(
+                        borderRadius: const BorderRadius.all(Radius.circular(15)),
+                        child: Image.asset("assets/trajet.jpg")
                     ),
                   ),
                   const SizedBox(height: 20,),
