@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:wineshop/screens/homeScreen.dart';
 
-import '../home_screen.dart';
 import 'linear_indicator.dart';
 import 'onboard.dart';
 import 'onboard_content.dart';
