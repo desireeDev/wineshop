@@ -21,8 +21,8 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           Appbar(),
           SizedBox(
-                     height:0 ,
-                  ),
+            height: 0,
+          ),
           Container(
             padding: EdgeInsets.only(top: 15),
             decoration: BoxDecoration(
@@ -48,7 +48,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: TextFormField(
                             decoration: InputDecoration(
                               border: InputBorder.none,
-                              hintText: "Search",
+                              // hintText: "Search",
+                              icon: Icon(Icons.search),
                             ),
                           ),
                         ),
@@ -56,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   SizedBox(
-                     height:0 ,
+                    height: 0,
                   ),
 //Declaration du deuxieme container
                   Container(
@@ -76,21 +77,22 @@ class _HomeScreenState extends State<HomeScreen> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("Customer's Choice",style: GoogleFonts.gabriela(
-                            color: Color.fromARGB(255, 158, 45, 83),
-                            fontSize: 16
-                          ),),
-                          Text("Ferghettina Rose Eronero",style:GoogleFonts.gabriela(
-                            color: Colors.black,
-                            fontSize: 16
-                          )),
+                          Text(
+                            "Customer's Choice",
+                            style: GoogleFonts.gabriela(
+                                color: Color.fromARGB(255, 158, 45, 83),
+                                fontSize: 16),
+                          ),
+                          Text("Ferghettina Rose Eronero",
+                              style: GoogleFonts.gabriela(
+                                  color: Colors.black, fontSize: 16)),
                           Row(
                             children: [
-                              Text("\$30.99",style:GoogleFonts.gabriela(
-                                color: Color.fromARGB(255, 231, 106, 148),
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18
-                              )),
+                              Text("\$30.99",
+                                  style: GoogleFonts.gabriela(
+                                      color: Color.fromARGB(255, 231, 106, 148),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 18)),
                               SizedBox(
                                 width: 5,
                               ),
@@ -108,6 +110,59 @@ class _HomeScreenState extends State<HomeScreen> {
           )
         ],
       ),
+      //Floatting bottom navigation bar
+      bottomNavigationBar: SafeArea(
+          child: Container(
+        padding: EdgeInsets.all(16),
+        margin: EdgeInsets.symmetric(horizontal: 26),
+        decoration: BoxDecoration(
+          color:   Color(0xFF421926),
+          borderRadius: BorderRadius.all(
+            Radius.circular(24), // changes position of shadow
+          ),
+        ),
+        child: Row(children: [
+          SizedBox(
+              width: 36,
+              height: 40,
+              child: IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.home,
+                    color: Colors.white,
+                  ))),
+          Spacer(),
+          SizedBox(
+              width: 36,
+              height: 40,
+              child: IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.favorite,
+                    color: Colors.white,
+                  ))),
+          Spacer(),
+          SizedBox(
+              width: 36,
+              height: 40,
+              child: IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.settings,
+                    color: Colors.white,
+                  ))),
+          Spacer(),
+          SizedBox(
+              width: 36,
+              height: 40,
+              child: IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.person,
+                    color: Colors.white,
+                  )))
+        ]),
+      )),
     );
   }
 }
