@@ -20,70 +20,94 @@ class _HomeScreenState extends State<HomeScreen> {
       body: ListView(
         children: [
           Appbar(),
+          SizedBox(
+                     height:0 ,
+                  ),
           Container(
             padding: EdgeInsets.only(top: 15),
             decoration: BoxDecoration(
               color: Color.fromARGB(103, 255, 255, 255),
             ),
-            child: Column(
-              children: [
-                Container(
-                  margin: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-                  height: 50,
-                  decoration: BoxDecoration(
-                    color: Color.fromARGB(130, 183, 36, 36),
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  child: Row(
-                    children: [
-                      Container(
-                        margin: EdgeInsets.only(left: 5),
-                        height: 59,
-                        width: 300,
-                        child: TextFormField(
-                          decoration: InputDecoration(
-                            border: InputBorder.none,
-                            hintText: "Search",
+            child: SizedBox(
+              child: Column(
+                children: [
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                    padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+                    height: 50,
+                    decoration: BoxDecoration(
+                      color: Color.fromARGB(168, 233, 228, 228),
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    child: Row(
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(left: 5),
+                          height: 59,
+                          width: 300,
+                          child: TextFormField(
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                              hintText: "Search",
+                            ),
                           ),
                         ),
-                      ),   
-                    ],   
+                      ],
+                    ),
                   ),
-                ),
+                  SizedBox(
+                     height:0 ,
+                  ),
 //Declaration du deuxieme container
-            Container(
-                  margin: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-                  height: 130,
-                  decoration: BoxDecoration(
-                    color: Color.fromARGB(130, 183, 36, 36),
-                    borderRadius: BorderRadius.circular(30),
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+                    padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+                    height: 110,
+                    width: 400,
+                    decoration: BoxDecoration(
+                      color: Color.fromARGB(42, 250, 189, 226),
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    child: Container(
+                      //margin: EdgeInsets.only(left: 5),
+                      height: 59,
+                      width: 300,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Customer's Choice",style: GoogleFonts.gabriela(
+                            color: Color.fromARGB(255, 158, 45, 83),
+                            fontSize: 16
+                          ),),
+                          Text("Ferghettina Rose Eronero",style:GoogleFonts.gabriela(
+                            color: Colors.black,
+                            fontSize: 16
+                          )),
+                          Row(
+                            children: [
+                              Text("\$30.99",style:GoogleFonts.gabriela(
+                                color: Color.fromARGB(255, 231, 106, 148),
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18
+                              )),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Text("0.2 gal"),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
                   ),
-                  child: Row(
-                    children: [
-                      Container(
-                        margin: EdgeInsets.only(left: 5),
-                        height: 59,
-                        width: 300,
-                        child: TextFormField(
-                          decoration: InputDecoration(
-                            border: InputBorder.none,
-                            hintText: "ESsai",
-                          ),
-                        ),
-                      ), 
-                    ],
-                  ),
-                ),
-                Ideas(),
-              ],
+                  Ideas(),
+                ],
+              ),
             ),
-           
-          )     
+          )
         ],
       ),
-    
     );
   }
 }

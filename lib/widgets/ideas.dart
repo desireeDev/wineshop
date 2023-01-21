@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:wineshop/screens/detailsScreen.dart';
 
 class Ideas extends StatefulWidget {
   const Ideas({Key? key}) : super(key: key);
@@ -23,12 +24,14 @@ class _IdeasState extends State<Ideas> {
             padding: EdgeInsets.only(left: 15, right: 15, top: 10),
             margin: EdgeInsets.only(left: 15, right: 15, top: 10),
             decoration: BoxDecoration(
-                color: Color.fromARGB(130, 183, 36, 36),
+                color: Colors.white,
                 borderRadius: BorderRadius.all(Radius.circular(20))),
             child: Column(
               children: [
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                  Navigator.push(context,MaterialPageRoute(builder:((context) =>DetailsScreen())));
+                  },
                   child: Container(
                     margin: EdgeInsets.all(10),
                     child: Image.asset(
@@ -42,7 +45,7 @@ class _IdeasState extends State<Ideas> {
                 Container(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    "description of a vin",
+                    "Domaine Carneros",
                     style: TextStyle(
                         fontSize: 19,
                         fontWeight: FontWeight.bold,
@@ -56,12 +59,13 @@ class _IdeasState extends State<Ideas> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Text(
-                          "\$ùùùùùùùùùu",
+                          "\$120",
                           style: TextStyle(
                               fontSize: 19,
                               fontWeight: FontWeight.bold,
-                              color: Colors.black45),
+                              color: Colors.black),
                         ),
+                        Spacer(),
                         Icon(
                           CupertinoIcons.add_circled_solid,
                           

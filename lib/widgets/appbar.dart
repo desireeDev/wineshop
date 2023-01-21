@@ -20,14 +20,16 @@ class _AppbarState extends State<Appbar> {
         children: [
           Padding (
             padding: EdgeInsets.only(left: 20),
-            child:Text("What  Would  you like ",
+            child:Text("What  Would  you like? ",
             style: GoogleFonts.adamina(
                   fontSize: 20,
                   color: Color.fromARGB(255, 1, 16, 19),
                   fontWeight: FontWeight.bold)
             ) ,
-
           ),
+          SizedBox(
+            width:15 ,
+          )
         ],
       ),
 

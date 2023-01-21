@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:wineshop/screens/cardScreen.dart';
 import 'package:wineshop/widgets/cardinfo.dart';
 
+import 'screens/detailsScreen.dart';
 import 'screens/homeScreen.dart';
 
 void main() {
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home:  const CardScreen(),
+      home:  const HomeScreen(),
     );
   }
 }
