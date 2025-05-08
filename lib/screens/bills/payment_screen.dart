@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter/services.dart' as flutter_services;
 import 'package:wineshop/screens/bills/success_screen.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/src/asset_manifest.dart' as google_fonts;
 
 class PaymentScreen extends StatefulWidget {
   const PaymentScreen({Key? key}) : super(key: key);
@@ -135,7 +136,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
       },
       keyboardType: TextInputType.number,
       inputFormatters: [
-        FilteringTextInputFormatter.digitsOnly
+        flutter_services.FilteringTextInputFormatter.digitsOnly
       ],
       decoration: InputDecoration(
         suffixIcon: const Icon(
@@ -184,7 +185,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
       },
       keyboardType: TextInputType.number,
       inputFormatters: [
-        FilteringTextInputFormatter.digitsOnly
+        flutter_services.FilteringTextInputFormatter.digitsOnly
       ],
       decoration: InputDecoration(
         filled: true,
@@ -366,7 +367,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
       },
       keyboardType: TextInputType.number,
       inputFormatters: [
-        FilteringTextInputFormatter.digitsOnly
+        flutter_services.FilteringTextInputFormatter.digitsOnly
       ],
       decoration: InputDecoration(
         suffixIcon: const Icon(
