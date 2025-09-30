@@ -17,7 +17,7 @@ class _MapsSceenState extends State<MapsSceen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Google Maps example'),
+        title: const Text('Notre Plan Google Map'),
       ),
       body: GoogleMap(
           initialCameraPosition: const CameraPosition(

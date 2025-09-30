@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wineshop/screens/bills/checkout_screen.dart';
 
@@ -25,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             IconButton(
                 onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const CheckOutScreen()));
+                   Get.to(() => const CheckOutScreen());
                 },
                 icon: const Icon(Icons.arrow_forward)
             )

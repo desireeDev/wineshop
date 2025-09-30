@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wineshop/screens/presentation/introduction_screen.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,12 +12,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       theme: ThemeData(
         //primaryColor: const Color(0xFF421926),
         // backgroundColor: const Color(0xffF2F5FA),
         // scaffoldBackgroundColor:  const Color(0xffF2F5FA),
-        colorScheme:  const ColorScheme.light(
+        colorScheme: const ColorScheme.light(
           primary: Color(0xFF421926),
         ),
       ),
@@ -97,7 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+              //style: Theme.of(context).textTheme.headline4,
             ),
           ],
         ),
